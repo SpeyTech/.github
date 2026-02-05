@@ -1,0 +1,74 @@
+name: Tenstorrent CI
+
+on:
+  workflow_call:
+    inputs:
+      build-target:
+        required: true
+        type: string
+      tt_dev_image:
+        description: "Tenstorrent dev container image to run the job inside"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  tt-build:
+    name: ${{ inputs.build-target }}
+    runs-on: ubuntu-latest
+
+    container:
+      image: ${{ inputs.tt_dev_image }}
+      options: --user 0:0
+
+    steps:
+      - name: Setup Homebrew (Linux)
+        if: runner.os == 'Linux'
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Put brew on PATH
+        shell: bash
+        run: |
+          echo "/home/linuxbrew/.linuxbrew/bin" >> "$GITHUB_PATH"
+          echo "/home/linuxbrew/.linuxbrew/sbin" >> "$GITHUB_PATH"
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+      - name: Show Homebrew info
+        run: |
+          which brew || echo "brew not in PATH"
+          brew --version
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Mark workspace as safe for git
+        shell: bash
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+      - name: Show environment
+        shell: bash
+        run: |
+          set -euo pipefail
+          uname -a || true
+          id || true
+          pwd
+          ls -la
+
+      - name: make setup
+        run: |
+          make setup
+
+      - name: make config
+        run: |
+          make config
+
+      - name: make build
+        run: |
+          make build
+
+      - name: make test
+        run: |
+          make test

@@ -23,34 +23,32 @@ jobs:
     env:
       BUILD_TYPE: Release
       BUILD_DIR: build
-      GENERATOR: Ninja
-      CCACHE_DIR: ~/.ccache
 
     steps:
+      - name: Setup Homebrew (Linux)
+        if: runner.os == 'Linux'
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Show Homebrew info
+        run: |
+          which brew || echo "brew not in PATH"
+          brew --version
+
+      - name: Show compiler info
+        run: |
+          env
+          command -v g++ clang++ gcc clang
+          gcc --version
+          g++ --version
+          clang --version
+          clang++ --version
+
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Restore ccache
-        uses: actions/cache@v4
-        with:
-          path: ~/.ccache
-          key: ccache-${{ runner.os }}-${{ github.ref_name }}-${{ github.sha }}
-          restore-keys: |
-            ccache-${{ runner.os }}-${{ github.ref_name }}-
-            ccache-${{ runner.os }}-
 
       - name: Setup
         run: |
           make setup
-
-      - name: Configure ccache
-        shell: bash
-        run: |
-          mkdir -p ~/.ccache
-          ccache --version
-          ccache -M 1G
-          ccache -s || true
-          ccache -z || true
 
       - name: Configure
         run: |
@@ -63,6 +61,3 @@ jobs:
       - name: Test
         run: |
           make test
-
-      - name: Show ccache stats (after)
-        run: ccache -s || true
