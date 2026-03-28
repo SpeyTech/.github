@@ -67,7 +67,6 @@ The methodology behind <code>c-from-scratch</code> — now as a complete book. L
 ## How do I use it?
 
 Each repository includes documentation in `docs/` with requirements, build instructions, and examples. Clone, build, run the tests.
-
 ```bash
 git clone https://github.com/SpeyTech/c-from-scratch.git
 cd c-from-scratch
@@ -76,7 +75,7 @@ make test
 
 ## How do I contribute?
 
-See [CONTRIBUTING.md](https://github.com/SpeyTech/.github/blob/main/CONTRIBUTING.md). Issues and pull requests welcome.
+All contributions require signing the [Contributor License Agreement](https://github.com/SpeyTech/.github/blob/main/CONTRIBUTOR-LICENSE-AGREEMENT.md) before a pull request can be merged. See [CONTRIBUTING.md](https://github.com/SpeyTech/.github/blob/main/CONTRIBUTING.md) for the full process.
 
 ---
 
