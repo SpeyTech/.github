@@ -75,7 +75,7 @@ make test
 
 ## How do I contribute?
 
-All contributions require signing the [Contributor License Agreement](https://github.com/SpeyTech/.github/blob/main/CONTRIBUTOR-LICENSE-AGREEMENT.md) before a pull request can be merged. See [CONTRIBUTING.md](https://github.com/SpeyTech/.github/blob/main/CONTRIBUTING.md) for the full process.
+All contributions require signing the [Contributor License Agreement](https://github.com/SpeyTech/.github/blob/master/CONTRIBUTOR-LICENSE-AGREEMENT.md) before a pull request can be merged. See [CONTRIBUTING.md](https://github.com/SpeyTech/.github/blob/master/CONTRIBUTING.md) for the full process.
 
 ---
 
