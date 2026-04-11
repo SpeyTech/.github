@@ -6,7 +6,7 @@ For engineers building systems where correctness must be provable.
 
 SpeyTech builds infrastructure for regulated industries where correctness is non-negotiable: deterministic computation (`certifiable-*`), verifiable AI execution and governance (Axioma), and safety-critical system design.
 
-These open-source components underpin commercial systems built by SpeyTech for regulated environments.
+These open-source components underpin commercial systems deployed in regulated environments.
 
 Built in the Scottish Highlands. Patent: UK GB2521625.0 (Murray Deterministic Computing Platform).
 
@@ -30,9 +30,9 @@ Built in the Scottish Highlands. Patent: UK GB2521625.0 (Murray Deterministic Co
 
 Axioma wraps non-deterministic AI (LLMs, retrieval, agent workflows) inside a cryptographically auditable determinism envelope.
 
-- Every decision is traceable.
-- Every computation is evidence-committed.
-- Non-deterministic components are contained behind formal oracle boundaries.
+- Every decision is traceable
+- Every computation is evidence-committed
+- Non-deterministic components are contained behind formal oracle boundaries
 
 Axioma builds upon the `certifiable-*` deterministic computation substrate, adding governance, policy enforcement, and audit capabilities for production AI systems.
 
