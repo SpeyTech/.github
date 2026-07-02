@@ -4,6 +4,8 @@
 
 For engineers building systems where correctness must be provable.
 
+**SpeyTech is the engineering brand; Spey Systems Ltd (SC889983) is the company.** All repositories, specifications, and associated assets are held by Spey Systems Ltd, a Scottish software and systems engineering company based in Inverness.
+
 SpeyTech builds infrastructure for regulated industries where correctness is non-negotiable: deterministic computation (`certifiable-*`), verifiable AI execution and governance (Axioma), and safety-critical system design.
 
 These open-source components underpin commercial systems deployed in regulated environments.
@@ -12,15 +14,25 @@ Built in the Scottish Highlands. Patent: UK GB2521625.0 (Murray Deterministic Co
 
 ---
 
+## 📖 The Book
+
+**[C From Scratch: Learn Safety-Critical C the Right Way](https://leanpub.com/c-from-scratch)**
+
+The methodology behind `c-from-scratch` as a complete book. Learn to write provably correct C using the Math → Structs → Code approach. Covers closed/total functions, deterministic FSMs, and patterns used in aerospace and medical device software.
+
+[Available on Leanpub →](https://leanpub.com/c-from-scratch)
+
+---
+
 ## Where to Start
 
-- **Understand the system** — [axioma-spec](https://github.com/SpeyTech/axioma-spec)
+- **Understand the system**: [axioma-spec](https://github.com/SpeyTech/axioma-spec)
   Framework specification, determinism contract, and system architecture.
 
-- **See deterministic ML in practice** — [certifiable-inference](https://github.com/SpeyTech/certifiable-inference)
+- **See deterministic ML in practice**: [certifiable-inference](https://github.com/SpeyTech/certifiable-inference)
   Run a forward pass and verify bit-identical output.
 
-- **Explore verification** — [axioma-verify](https://github.com/SpeyTech/axioma-verify) · [certifiable-verify](https://github.com/SpeyTech/certifiable-verify)
+- **Explore verification**: [axioma-verify](https://github.com/SpeyTech/axioma-verify) · [certifiable-verify](https://github.com/SpeyTech/certifiable-verify)
 
 ---
 
@@ -41,7 +53,7 @@ Axioma builds upon the `certifiable-*` deterministic computation substrate, addi
 
 | Layer | Concern | Repo | Role |
 |-------|---------|------|------|
-| L0 | Epistemic containment | [axioma-l0](https://github.com/SpeyTech/axioma-l0) | Pre-admission proxy — ensures no regime-identifying information crosses the model boundary |
+| L0 | Epistemic containment | [axioma-l0](https://github.com/SpeyTech/axioma-l0) | Pre-admission proxy ensuring no regime-identifying information crosses the model boundary |
 | L7 | Accountability | [axioma-governance](https://github.com/SpeyTech/axioma-governance) | Proof-carrying governance and compliance reporting |
 | L6 | Truth | [axioma-audit](https://github.com/SpeyTech/axioma-audit) | Cryptographic audit ledger with total ordering |
 | L5 | Behaviour | [axioma-agent](https://github.com/SpeyTech/axioma-agent) | Agent totality contracts and health FSM |
@@ -50,7 +62,7 @@ Axioma builds upon the `certifiable-*` deterministic computation substrate, addi
 | L2 | Identity | `certifiable-*` (below) | Deterministic ML computation substrate |
 | L1 | Mathematics | libaxilog | DVM arithmetic primitives and fault model |
 
-L0 sits orthogonally to L1–L7. It operates as a pre-admission proxy before L3, curating what the model sees without modifying what L6 records.
+L0 sits orthogonally to L1 to L7. It operates as a pre-admission proxy before L3, curating what the model sees without modifying what L6 records.
 
 Supporting repos: [axioma-spec](https://github.com/SpeyTech/axioma-spec) (specification and SRS documents) · [axioma-verify](https://github.com/SpeyTech/axioma-verify) (verification tooling)
 
@@ -80,7 +92,7 @@ Designed for certification under DO-178C, IEC 62304, ISO 26262, and IEC 61508.
 | Verification | [certifiable-verify](https://github.com/SpeyTech/certifiable-verify) | 10 suites | Formal verification toolkit |
 | Harness | [certifiable-harness](https://github.com/SpeyTech/certifiable-harness) | 4 | End-to-end pipeline integration tests |
 | Benchmarks | [certifiable-bench](https://github.com/SpeyTech/certifiable-bench) | 11,840 | Performance characterisation (latency, throughput, WCET) |
-| Build | [certifiable-build](https://github.com/SpeyTech/certifiable-build) | — | Deterministic build infrastructure |
+| Build | [certifiable-build](https://github.com/SpeyTech/certifiable-build) | n/a | Deterministic build infrastructure |
 
 **Pipeline:**
 
@@ -89,16 +101,6 @@ certifiable-data → certifiable-training → certifiable-quant → certifiable-
                                                                                           ↓
                                                                               certifiable-monitor
 ```
-
----
-
-## The Book
-
-**C From Scratch: Learn Safety-Critical C the Right Way**
-
-The methodology behind `c-from-scratch` — now as a complete book. Learn to write provably correct C using the Math → Structs → Code approach. Covers closed/total functions, deterministic FSMs, and patterns used in aerospace and medical device software.
-
-[Available on Leanpub →](https://leanpub.com/c-from-scratch)
 
 ---
 
@@ -117,9 +119,9 @@ Most Axioma and `certifiable-*` repositories are licensed under **AGPLv3** ([AGP
 
 See individual repositories for specific terms. All repositories include SPDX identifiers.
 
-Commercial licensing is available for organisations that cannot comply with AGPL terms.
+Commercial licensing is available from Spey Systems Ltd for organisations that cannot comply with AGPL terms.
 
-Contact: [william@speytech.com](mailto:william@speytech.com)
+Contact: [william@speysystems.com](mailto:william@speysystems.com)
 
 ---
 
@@ -134,9 +136,9 @@ All contributors must sign the [Contributor License Agreement](https://github.co
 ## Contact
 
 **William Murray**
-Founder, SpeyTech
-[william@speytech.com](mailto:william@speytech.com)
-[speytech.com](https://speytech.com)
+Founder, Spey Systems Ltd (SC889983)
+[william@speysystems.com](mailto:william@speysystems.com)
+[speysystems.com](https://speysystems.com) · [speytech.com](https://speytech.com)
 
 ---
 
