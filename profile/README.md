@@ -148,7 +148,7 @@ certifiable-data → certifiable-training → certifiable-quant → certifiable-
   run a forward pass and verify bit-identical output.
 
 This page curates; it does not catalogue. The full estate
-of 43 public repositories is in the
+of 28 public repositories is in the
 [repositories tab](https://github.com/orgs/SpeyTech/repositories).
 
 ---
